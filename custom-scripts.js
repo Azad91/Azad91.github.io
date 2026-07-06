@@ -375,24 +375,32 @@
           }
        });
     
-        function submitForm(){
-          var name = $("#name").val();
-          var email = $("#email").val();
-          var message = $("#message").val();
-          $.ajax({
-              type: "POST",
-              url: "process.php",
-              data: "name=" + name + "&email=" + email + "&message=" + message,
-              success : function(text){
-                  if (text == "success"){
-                      formSuccess();
-                    } else {
-                      formError();
-                      submitMSG(false,text);
-                    }
-                }
-            });
+function submitForm(){
+    var firstName = $("#name").val();
+    var lastName = $("#L_name").val();
+    var email = $("#email").val();
+    var message = $("#message").val();
+
+    $.ajax({
+        type: "POST",
+        url: "https://formspree.io/f/xnjkrvrl",
+        headers: { "Accept": "application/json" },
+        data: {
+            first_name: firstName,
+            last_name: lastName,
+            email: email,
+            message: message
+        },
+        dataType: "json",
+        success : function(data){
+            formSuccess();
+        },
+        error: function(xhr){
+            formError();
+            submitMSG(false, "Something went wrong. Please try again.");
         }
+    });
+}
         function formSuccess(){
             $("#contactForm")[0].reset();
             submitMSG(true, "Message Sent!")
