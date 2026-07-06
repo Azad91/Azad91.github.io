@@ -1597,18 +1597,19 @@ li .fa {
   border-radius: 50%;
 }
 
-.mh-home .hero-img {
-  margin: 0 auto;
-  float: none;
-  margin-top: 30px;
-  text-align: center;
+.mh-home .hero-img img{
+    width: 420px;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 50%;
+    border:12px solid rgba(0,0,0,.18);
 }
 
 .mh-home .hero-img img {
   margin: 0 auto;
   float: none;
   text-align: center;
-  border: 20px solid rgba(0, 0, 0, 0.17);
+  border: 12px solid rgba(0, 0, 0, 0.2);
   border-radius: 50%;
 }
 
