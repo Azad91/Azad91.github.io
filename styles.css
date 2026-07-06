@@ -1598,8 +1598,6 @@ li .fa {
 }
 
 .mh-home .hero-img img{
-    width: 420px;
-    height: 420px;
     object-fit: cover;
     border-radius: 50%;
     border:12px solid rgba(0,0,0,.18);
